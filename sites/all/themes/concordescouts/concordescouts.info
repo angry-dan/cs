@@ -1,0 +1,19 @@
+; $Id: stark.info,v 1.4 2010/11/07 00:27:20 dries Exp $
+name = Concordescouts
+description = Default theme for the 25th Medway Scout Group site.
+
+engine = "phptemplate"
+
+version = 1.0
+core = 7.x
+stylesheets[all][] = css/960.css
+stylesheets[all][] = css/layout.css
+
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar] = Left sidebar
+regions[content_footer] = Content Footer
+regions[footer] = Footer

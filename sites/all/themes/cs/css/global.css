@@ -1,0 +1,63 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+@import url("http://fonts.googleapis.com/css?family=Oswald:400,700,300");
+
+body {
+  background: none repeat scroll 0 0 #F7F7FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald',sans-serif;
+}
+
+h1, h2 {
+  color: #AA0000;
+  text-shadow: 2px 2px 2px #888888;
+}
+
+h1 {  
+  font-size: 45px;
+}
+
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link {
+  text-decoration: underline;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  text-decoration: none;
+}
+
+#region-content {
+  background-color: #F7F7FF;
+}
+
+a:link, a:visited {
+    color: #0062A0;
+    text-decoration: none;
+}
+a:hover {
+    color: #AA0000;
+    text-decoration: underline;
+}
+a:active {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Drop admin_menu completley at 950px - it just gets in the way by then anyway */
+@media (max-width:950px) {
+  #admin-menu {
+    display: none;
+  } 
+  
+  html body.admin-menu {
+    margin-top: 0!important;
+  }  
+}
+
+@media (min-width:950px) {
+  .admin-menu #section-header{
+    margin-top: 60px;
+  }
+}

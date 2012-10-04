@@ -1,0 +1,70 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+
+body {
+  background: none repeat scroll 0 0 #F7F7FF;
+  margin: 0 50px 0 100px;
+}
+h1 {
+  color: #AA0000;
+  font-family: 'Oswald',sans-serif;
+  font-size: 45px;
+}
+#main-logo {
+  background-image: url("images/logo-large.png");
+  float: left;
+  height: 170px;
+  margin-left: -50px;
+  margin-right: -110px;
+  margin-top: -25px;
+  width: 160px;
+}
+.hidden-text {
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+.hidden-text a {
+  outline: medium none;
+}
+.main-header {
+  background: url("images/header-bg.png") no-repeat scroll right center #1F1E1D;
+  margin: 30px 50px 0 0;
+}
+.main-menu {
+  -moz-box-sizing: border-box;
+  border-bottom: 10px solid #AA0000;
+  display: table;
+  padding-left: 100px;
+  padding-top: 52px;
+  width: 100%;
+}
+.main-menu ul {
+  display: table-row;
+}
+.main-menu ul li {
+  display: table-cell;
+  padding: 0 10px;
+  text-align: center;
+  width: 16.6%;
+}
+.main-menu a {
+  -moz-transition-duration: 0.2s;
+  -moz-transition-timing-function: ease;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+.main-menu a:hover, .main-menu a:active, .main-menu a.active {
+  background-color: #AA0000;
+}
+#main {
+  margin-left: 90px;
+  margin-right: 45px;
+}
+
+#main > h1 {
+  margin-top: 0;
+}

@@ -1,0 +1,155 @@
+
+/*************************************************************************
+ * LAYOUT - far simpler thanks to 960.gs
+ *************************************************************************/
+
+body{background-image: url(../images/background.png); margin: 0; background-attachment: fixed}
+
+#outer{ background-image: url(../images/header-bg.png); background-repeat: repeat-x }
+
+#header{ margin-left: -12px;  padding: 154px 18px 0 258px; }
+
+#header .home{
+    background-image: url("../images/header.png");
+    display: block;
+    height: 207px;
+    margin: -154px -18px -52px -258px;
+    width: 988px;
+	text-indent: -999em;
+	outline: none;
+}
+
+#body{ background-image: url(../images/content-repeat.png); min-height: 242px; width: 974px; margin-left: -12px; padding-left: 12px; }
+
+#body-inner { background-image:url("../images/content-top.png"); background-repeat:no-repeat; margin-left:2px; min-height:242px; width:960px; padding-bottom:1em; }
+
+#body-footer{ background-image: url(../images/content-bottom.png); height: 13px; width: 974px; margin-left: -12px; padding-left: 12px; }
+
+#footer{  }
+
+/*************************************************************************
+ * NAVIGATION
+ *************************************************************************/
+#header ul.links{ height:42px; margin:5px 18px; padding:0; padding-left: 15px; }
+#header ul.links li{ list-style: none; float: left; padding-top: 4px; }
+#header ul.links li a{ color: white; font-size: 15px; font-weight: bold; letter-spacing: -0.75px; line-height: 27px; margin-right: 11px; text-decoration: none; text-transform: uppercase; }
+#header ul.links li a:hover{ text-decoration: underline; }
+#header ul.links li a.active-trail{ color: white }
+
+/*************************************************************************
+ * BREADCRUMBS & PRIMARY TABS
+ *************************************************************************/
+.breadcrumb { border-bottom:1px solid #222123; margin-top:2px; padding:0; padding-bottom: 1px;}
+.breadcrumb a, .breadcrumbs a:visited { color:white; font-weight:bold; letter-spacing:-1px; text-decoration:none; }
+.breadcrumb a:hover{ color: #222123 }
+
+.primary.tabs{ float:right; margin: 3px; border-bottom:1px solid #222123; }
+
+
+/*************************************************************************
+ * TYPOGRAPHY & GENERIC STYLES
+ *************************************************************************/
+
+body{ font-family: Varela,Verdana,Arial,sans-serif  }
+
+h1, h2, h3, h4, h5, h6{ padding: 2px; color:#251934; font-family: 'Tienne', serif; }
+
+
+h4, h5 { border-bottom:1px solid #251934; }
+
+h1{ font-size: 32px; line-height: 32px; }
+h2{ font-size: 24px; line-height: 28px; }
+h3{ font-size: 19px; line-height: 23px; }
+h4{ font-size: 16px; line-height: 16px; }
+h5{ font-size: 13px; line-height: 13px; }
+h6{ font-size: 13px; line-height: 13px; }
+
+h1.page-title{ color: white; margin-top: 0px; }
+
+
+
+p{  }
+
+a, a:visited {
+	color: #422763;
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	color: #422763;
+	text-decoration: underline;
+}
+
+.right{ float: right }
+.left{ float: left }
+.clear-visible{ clear:both; }
+
+
+/*************************************************************************
+ * NEWS LISTING
+ *************************************************************************/
+.node-news.node-teaser{
+	margin: 10px 0;
+	padding: 5px 0;
+}
+
+.views-row-last .node-news.node-teaser{
+	border-bottom: none;
+}
+
+.node-news.node-teaser .block-title {
+	margin-top: 0px;
+}
+
+.node-news.node-teaser .field-name-post-date{
+    color: #666666;
+    font-size: 80%;
+    font-style: italic;
+}
+
+/*
+table
+
+ul li
+
+ol li
+
+dl dd
+
+dl dt
+
+
+*/
+
+
+/*
+
+*/
+
+li.node-readmore {
+	float: right;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+
+/*************************************************************************
+ * GALLERY
+ *************************************************************************/
+.field-name-field-gallery-images img {
+    border: 2px solid white;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 10px 2px #000000;
+    display: block;
+    float: left;
+    margin: 5px;
+}
+
+
+.item-list ul{
+	list-style: none;
+}
+.item-list ul li{
+	list-style: none;
+}

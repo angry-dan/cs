@@ -1,0 +1,6 @@
+/* This file will hold styles that are loaded using the same media query as the wide grid. */
+
+#region-branding .site-name {
+  width: 80px;
+/*  margin: -25px 0 -40px -40px;*/
+}

@@ -1,0 +1,121 @@
+/* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
+#zone-branding {
+  height: 100px;  
+  background-color: #1F1E1D;
+  border-bottom: 10px solid #AA0000;
+  width: 1190px;  
+}
+
+#region-menu {
+  background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
+  border-bottom: 10px solid #AA0000;  
+}
+
+#section-header {
+  margin: 30px 0 0 0;
+}
+
+body {
+  background: url("../images/background.jpg") no-repeat fixed center bottom #F7F7FF;
+}
+
+#region-branding .site-name {
+  height: 170px;
+  margin-top: -30px;
+  margin-bottom: -40px; /* total = 100 */
+}
+#region-branding a {
+  background-image: url("../images/logo-large.png");
+  display: block;
+  height: 170px;
+  position: absolute;
+  text-indent: -9999em;
+  width: 160px;
+  z-index: 1;
+}
+
+.navigation {
+  display: table;
+  height: 40px;
+  margin-top: 60px;
+  width: 100%;
+}
+.navigation ul {
+  display: table-row !important;
+}
+.navigation ul li {
+  display: table-cell;
+  padding: 0 10px;
+  text-align: center;
+  width: 16.6%;
+}
+.navigation a {
+  -moz-transition-duration: 0.2s;
+  -moz-transition-timing-function: ease;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  display: block;
+  font-family: 'Oswald',sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 7px 10px;
+  text-decoration: none;
+  
+  
+  
+}
+.navigation a:hover, .navigation a:active {
+  background-color: #AA0000;
+}
+
+.navigation a.active {
+  background: #AA0000; /* Old browsers */
+  background: -moz-linear-gradient(top, #e80000 0%, #aa0000 78%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e80000), color-stop(78%,#aa0000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e80000 0%,#aa0000 78%); /* IE10+ */
+  background: linear-gradient(to bottom, #e80000 0%,#aa0000 78%); /* W3C */
+
+  color: white;
+}
+
+.region-content-inner {
+  margin: 12px; 
+}
+
+.breadcrumb, 
+.region-preface-third {
+  background: none repeat scroll 0 0 #AA0000;
+  border-radius: 0 0 5px 5px;  
+}
+
+
+.breadcrumb {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 15px;
+  color: white;
+  margin-bottom: 3px;
+}
+.breadcrumb a:link, .breadcrumb a:visited{
+  color: white;
+  text-decoration: underline;
+}
+
+#search-block-form {
+  margin: 3px;
+}
+
+#search-block-form .form-text {
+  width: 221px;
+}
+
+#search-block-form .form-submit {
+  border-radius: 0 11px 11px 0;  
+  margin-right: 0;
+}
+
+border-radius: 0 11px 11px 0;
