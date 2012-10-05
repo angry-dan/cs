@@ -1,11 +1,12 @@
 <div id="outer">
 	<div class="container_12">
 
-		<div id="header" class="container_12">
+		<div id="header">
 			<a class="home" href="<?php print $front_page ?>">
 				Home
 			</a>
 			<?php print theme('links', array('links' => $main_menu)) ?>
+      <?php print render($page['header']) ?>			
 		</div>
 
 		<div class="clear"></div>
