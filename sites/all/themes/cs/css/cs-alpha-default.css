@@ -1,14 +1,14 @@
 /* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
 #zone-branding {
-  height: 100px;  
+  height: 100px;
   background-color: #1F1E1D;
   border-bottom: 10px solid #AA0000;
-  width: 1190px;  
+  width: 1190px;
 }
 
 #region-menu {
   background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
-  border-bottom: 10px solid #AA0000;  
+  border-bottom: 10px solid #AA0000;
 }
 
 #section-header {
@@ -61,9 +61,9 @@ body {
   letter-spacing: 2px;
   padding: 7px 10px;
   text-decoration: none;
-  
-  
-  
+
+
+
 }
 .navigation a:hover, .navigation a:active {
   background-color: #AA0000;
@@ -81,14 +81,10 @@ body {
   color: white;
 }
 
-.region-content-inner {
-  margin: 12px; 
-}
-
-.breadcrumb, 
+.breadcrumb,
 .region-preface-third {
   background: none repeat scroll 0 0 #AA0000;
-  border-radius: 0 0 5px 5px;  
+  border-radius: 0 0 5px 5px;
 }
 
 
@@ -114,7 +110,7 @@ body {
 }
 
 #search-block-form .form-submit {
-  border-radius: 0 11px 11px 0;  
+  border-radius: 0 11px 11px 0;
   margin-right: 0;
 }
 
