@@ -12,3 +12,15 @@
 The trick is to never let it off the screen using your media queries.
 Those numbers above need to be maintained.
 */
+#search-block-form {
+  margin: 3px 6px 6px;
+}
+
+#search-block-form .form-text {
+  width: 141px;
+}
+
+#search-block-form .form-submit {
+  border-radius: 0 11px 11px 0;  
+  margin-right: 0;
+}

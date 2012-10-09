@@ -1,12 +1,6 @@
 /* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
 #zone-branding {
-  height: 100px;  
-  background-color: #1F1E1D;
-  border-bottom: 10px solid #AA0000;
-  width: 1190px;  
-}
-
-#region-menu {
+  height: 100px;
   background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
   border-bottom: 10px solid #AA0000;  
 }
@@ -34,21 +28,6 @@ body {
   z-index: 1;
 }
 
-.navigation {
-  display: table;
-  height: 40px;
-  margin-top: 60px;
-  width: 100%;
-}
-.navigation ul {
-  display: table-row !important;
-}
-.navigation ul li {
-  display: table-cell;
-  padding: 0 10px;
-  text-align: center;
-  width: 16.6%;
-}
 .navigation a {
   -moz-transition-duration: 0.2s;
   -moz-transition-timing-function: ease;
@@ -61,9 +40,6 @@ body {
   letter-spacing: 2px;
   padding: 7px 10px;
   text-decoration: none;
-  
-  
-  
 }
 .navigation a:hover, .navigation a:active {
   background-color: #AA0000;
@@ -89,6 +65,7 @@ body {
 .region-preface-third {
   background: none repeat scroll 0 0 #AA0000;
   border-radius: 0 0 5px 5px;  
+  margin-bottom: 5px;
 }
 
 
@@ -104,18 +81,3 @@ body {
   color: white;
   text-decoration: underline;
 }
-
-#search-block-form {
-  margin: 3px;
-}
-
-#search-block-form .form-text {
-  width: 221px;
-}
-
-#search-block-form .form-submit {
-  border-radius: 0 11px 11px 0;  
-  margin-right: 0;
-}
-
-border-radius: 0 11px 11px 0;

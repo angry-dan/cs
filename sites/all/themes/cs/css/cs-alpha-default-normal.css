@@ -1,3 +1,23 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
 /* If you are using the default media queries provided by Omega, these styles will also
  *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
+
+.navigation {
+  display: table;
+  height: 40px;
+  margin-top: 60px;
+  width: 100%;
+}
+.navigation ul {
+  display: table-row !important;
+}
+.navigation ul li {
+  display: table-cell;
+  padding: 0 10px;
+  text-align: center;
+  width: 16.6%;
+}
+
+#search-block-form .form-text {
+  width: 221px;
+}
