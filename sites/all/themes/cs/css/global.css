@@ -16,7 +16,7 @@ h1, h2 {
   text-shadow: 2px 2px 2px #888888;
 }
 
-h1 {  
+h1 {
   font-size: 45px;
 }
 
@@ -49,11 +49,11 @@ a:active {
 @media (max-width:950px) {
   #admin-menu {
     display: none;
-  } 
-  
+  }
+
   html body.admin-menu {
     margin-top: 0!important;
-  }  
+  }
 }
 
 @media (min-width:950px) {

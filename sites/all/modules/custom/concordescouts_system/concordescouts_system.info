@@ -1,0 +1,4 @@
+name = Concordescoyts System module
+description = System module
+core = 7.x
+package = Custom

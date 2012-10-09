@@ -2,7 +2,7 @@
 #zone-branding {
   height: 100px;
   background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
-  border-bottom: 10px solid #AA0000;  
+  border-bottom: 10px solid #AA0000;
 }
 
 #section-header {
@@ -57,11 +57,7 @@ body {
   color: white;
 }
 
-.region-content-inner {
-  margin: 12px; 
-}
-
-.breadcrumb, 
+.breadcrumb,
 .region-preface-third {
   background: none repeat scroll 0 0 #AA0000;
   border-radius: 0 0 5px 5px;  
