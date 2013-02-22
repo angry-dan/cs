@@ -1,28 +1,25 @@
 <?php
-
-function concordescouts_system_theme_registry_alter(&$theme_registry) {
-  //Overrides the use of theme_date_combo()
-  $theme_registry['date_combo']['function'] = 'concordescouts_system_theme_date_combo';
-}
-
-/**
- * Replacement for theme_date_combo. Doesn't return any fieldsets, or otherwise wrap
- * the date field.
- * @todo probably this is only relevent to 'single field' date widgets like the
- * calendar popup.
- *
- * @todo labels need to be considered.
- */
-function concordescouts_system_theme_date_combo($variables) {
-  //More work needed
-  return $variables['element']['#children'];
-}
-
 //@TODO when creating a programme you should be able to 'add the next 5 wednesdays'
 //@TODO a programme entry should be removed if it has no 'event' description field - this is instead of making the field required.
 //@TODO whenever the 'section' field is used this will need to be called
 function concordescouts_system_form_programme_node_form_alter() {
   ctools_add_css('node-form', 'concordescouts_system');
+}
+
+/**
+ * form alters for:
+ *
+ * Login, registration, password reset?
+ */
+
+function concordescouts_system_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    if (isset($implementations['concordescouts_system'])) {
+      $group = $implementations['concordescouts_system'];
+      unset($implementations['concordescouts_system']);
+      $implementations['concordescouts_system'] = $group;
+    }
+  }
 }
 
 //Alter the login form to make it difficult to login without OpenID
@@ -33,17 +30,24 @@ function concordescouts_system_form_user_login_alter(&$form, &$form_state) {
     '#title' => 'Administrative login',
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
+    '#weight' => 10,
   );
 
   $form['group']['name'] = $form['name'];
   $form['group']['pass'] = $form['pass'];
+
+  $form['group']['name']['#required'] = FALSE;
+  $form['group']['pass']['#required'] = FALSE;
+
   $form['group']['actions'] = $form['actions'];
   unset($form['name'], $form['pass'], $form['actions']);
   unset($form['openid_links']);
 
+
+
   $form['login_wrapper'] = array(
     '#type' => 'item',
-    '#description' => t('Group members with a 25th Medway Google Account (email address ending in @concordescouts.org.uk) are able to login to this site. Use the button above.<br />All other Google logins will be rejected.')
+    '#description' => t('Group members with a 25th Medway Google Account (email address ending in @concordescouts.org.uk) are able to login to this site.')
   );
 
   $form['login_wrapper']['login_button'] = array(
@@ -61,7 +65,12 @@ function concordescouts_system_form_user_login_validate(&$form, &$form_state) {
     $return_to = url('', array('absolute' => TRUE));
   }
 
-  openid_begin('https://www.google.com/accounts/o8/id', $return_to, $form_state['values']);
+  $url = variable_get('cs_openid_url');
+  if (!$url) {
+    throw new Exception('OpenID login not possible - variable "cs_openid_url" not set');
+  }
+
+  openid_begin($url, $return_to, $form_state['values']);
 }
 
 /**
@@ -82,4 +91,41 @@ function concordescouts_system_user_register_form_validate(&$form, &$form_state)
   if (!isset($form['openid_claimed_id']) || empty($form['openid_claimed_id']['#value'])) {
     form_set_error(NULL, 'Sorry, you can only sign up with a valid OpenID');
   }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function concordescouts_system_menu() {
+  $items = array();
+  $items['openid'] = array(
+    'title' => t('Open ID forwarder'),
+    'page callback' => 'concordesocuts_system_openid_forwarder',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Menu callback.
+ *
+ * Forwards requests to /openid to Google, which rather annoyingly points to us
+ * when you use fereated login. Drupal doesn't like that as the returned claimed
+ * identifyer is invalid, so doing this allows the verification process to go
+ * ahead.
+ */
+function concordesocuts_system_openid_forwarder() {
+  $url = variable_get('cs_openid_url');
+  if (!$url) {
+    throw new Exception('OpenID login not possible - variable "cs_openid_url" not set');
+  }
+  drupal_add_html_head(array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => 'X-XRDS-Location',
+      'content' => check_url($url),
+    ),
+  ), 'openidurlmeta');
+  return t('This page serves only to forward our OpenID requests');
 }
