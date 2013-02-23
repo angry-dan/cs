@@ -7,11 +7,8 @@ function concordescouts_system_form_programme_node_form_alter() {
 }
 
 /**
- * form alters for:
- *
- * Login, registration, password reset?
+ * Implements hook_module_implements_alter().
  */
-
 function concordescouts_system_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'form_alter') {
     if (isset($implementations['concordescouts_system'])) {
@@ -43,8 +40,6 @@ function concordescouts_system_form_user_login_alter(&$form, &$form_state) {
   unset($form['name'], $form['pass'], $form['actions']);
   unset($form['openid_links']);
 
-
-
   $form['login_wrapper'] = array(
     '#type' => 'item',
     '#description' => t('Group members with a 25th Medway Google Account (email address ending in @concordescouts.org.uk) are able to login to this site.')
@@ -68,7 +63,7 @@ function concordescouts_system_form_user_login_validate(&$form, &$form_state) {
   $url = variable_get('cs_openid_url');
   if (!$url) {
     throw new Exception('OpenID login not possible - variable "cs_openid_url" not set');
-  }
+}
 
   openid_begin($url, $return_to, $form_state['values']);
 }
