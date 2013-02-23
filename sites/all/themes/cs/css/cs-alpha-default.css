@@ -1,16 +1,12 @@
 /* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
-#zone-branding {
-  height: 100px;
-  background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
-  border-bottom: 10px solid #AA0000;
-}
 
 #section-header {
-  margin: 30px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 body {
-  background: url("../images/background.jpg") no-repeat fixed center bottom #F7F7FF;
+  background: url("../images/background.jpg") no-repeat fixed 50% 0px #F7F7FF;
+  transition: all 0.2s ease 0s;
 }
 
 #region-branding .site-name {
@@ -18,6 +14,7 @@ body {
   margin-top: -30px;
   margin-bottom: -40px; /* total = 100 */
 }
+
 #region-branding a {
   background-image: url("../images/logo-large.png");
   display: block;
@@ -26,35 +23,6 @@ body {
   text-indent: -9999em;
   width: 160px;
   z-index: 1;
-}
-
-.navigation a {
-  -moz-transition-duration: 0.2s;
-  -moz-transition-timing-function: ease;
-  border-radius: 10px 10px 0 0;
-  color: white;
-  display: block;
-  font-family: 'Oswald',sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  padding: 7px 10px;
-  text-decoration: none;
-}
-.navigation a:hover, .navigation a:active {
-  background-color: #AA0000;
-}
-
-.navigation a.active {
-  background: #AA0000; /* Old browsers */
-  background: -moz-linear-gradient(top, #e80000 0%, #aa0000 78%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e80000), color-stop(78%,#aa0000)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #e80000 0%,#aa0000 78%); /* IE10+ */
-  background: linear-gradient(to bottom, #e80000 0%,#aa0000 78%); /* W3C */
-
-  color: white;
 }
 
 .breadcrumb,
@@ -76,4 +44,51 @@ body {
 .breadcrumb a:link, .breadcrumb a:visited{
   color: white;
   text-decoration: underline;
+}
+
+.front-thumbs img {
+  width: auto;
+  height: auto;
+  max-width: 33%;
+}
+
+img.grid-1,
+img.grid-2,
+img.grid-3,
+img.grid-4,
+img.grid-5,
+img.grid-6,
+img.grid-7,
+img.grid-8,
+img.grid-9,
+img.grid-10,
+img.grid-11,
+img.grid-12 {
+  height:auto;
+}
+
+#zone-footer {  
+  background-color: #AA0000;
+  background-color: rgba(170, 0, 0, 0.8);
+  color: #F7F7FF;
+  margin: 10px auto 50px;
+  border: none; 
+}
+
+#zone-footer a:link,
+#zone-footer a:visited{
+  color: #D4A705
+}
+
+html body.admin-menu,
+html body.admin-menu-with-shortcuts{
+  margin-top: 0 !important;
+}
+
+html body.admin-menu {
+  padding-top: 29px;
+}
+
+html body.admin-menu-with-shortcuts {
+  padding-top: 65px;
 }

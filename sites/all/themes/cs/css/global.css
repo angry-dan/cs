@@ -1,9 +1,7 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
 
-@import url("http://fonts.googleapis.com/css?family=Oswald:400,700,300");
-
-body {
+html {
   background: none repeat scroll 0 0 #F7F7FF;
 }
 
@@ -28,13 +26,20 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   text-decoration: none;
 }
 
+h3 {
+  border-bottom: solid 1px #AA0000;
+  color: #AA0000;
+}
+
 #zone-content {
   background-color: #F7F7FF;
 }
 
 a:link, a:visited {
-    color: #0062A0;
-    text-decoration: none;
+  color: #0062A0;
+  transition-duration: 0.2s;
+  transition-property: color, background-color;
+  transition-timing-function: ease;
 }
 a:hover {
     color: #AA0000;
@@ -43,6 +48,21 @@ a:hover {
 a:active {
     color: #000000;
     text-decoration: underline;
+}
+
+address {
+  color: #AA0000;
+  font-weight: bold;
+}
+
+small {
+  font-size: smaller;
+}
+
+.front-thumbs img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
 }
 
 /* Drop admin_menu completley at 950px - it just gets in the way by then anyway */
@@ -56,8 +76,158 @@ a:active {
   }
 }
 
-@media (min-width:950px) {
-  .admin-menu #section-header{
-    margin-top: 60px;
+/**
+ * Mobile styles - help!
+ */
+/*#section-content{
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 0 5px #F7F7FF;
+  margin: 5px;
+}
+html{
+  height: 100%;
+}
+body {
+  background: none repeat scroll 0 0 #1F1E1D;
+  border-left: solid 10px #AA0000;
+  border-right: solid 10px #AA0000;
+  min-height: 100%;
+}*/
+
+
+#zone-branding {
+  height: 100px;
+  background: url("../images/header-bg.png") no-repeat scroll right bottom #1F1E1D;
+  border-bottom: 10px solid #AA0000;
+}
+
+
+#region-branding {
+  float: left;
+}
+
+#region-branding .site-name {
+  height: 110px;
+  margin: 0 0 -10px;
+}
+
+#region-branding a {
+  background-image: url("../images/logo-small.png");
+  display: block;
+  height: 110px;
+  position: relative;
+  text-indent: -9999em;
+  width: 104px;
+  z-index: 1;
+}
+
+.navigation a {
+  color: white;
+  display: block;
+  font-family: 'Oswald',sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 7px 10px;
+  text-decoration: none;
+}
+.navigation a:hover, .navigation a:active {
+  background-color: #AA0000;
+}
+
+.navigation a.active {
+  background: #AA0000; /* Old browsers */
+  background: -moz-linear-gradient(top, #e80000 0%, #aa0000 78%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e80000), color-stop(78%,#aa0000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e80000 0%,#aa0000 78%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e80000 0%,#aa0000 78%); /* IE10+ */
+  background: linear-gradient(to bottom, #e80000 0%,#aa0000 78%); /* W3C */
+  text-shadow: 0 0 1px #000000;
+  color: white;
+}
+
+
+.navigation ul li {
+    display: inline-block;
+    margin: 5px 10px;
+    text-align: center;
+    width: 130px;
+}
+
+.navigation a {
+  border-radius: 10px;
+}
+
+@media (max-width:650px) {
+  .navigation ul li{
+    width: auto;
   }
+  
+  #region-menu {
+    padding-right: 60px;
+  }
+}
+
+@media (max-width:550px) {
+  #region-branding {
+    display:none;
+  }
+  .navigation ul li{
+    margin: 0;
+  }
+  .navigation a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 800;
+  }
+}
+
+
+#zone-footer {  
+  background-color: #1F1E1D;
+  color: #CCC;
+  border-top: #AA0000 solid 10px;
+  margin-top:50px;
+  padding-top: 10px;
+}
+
+#zone-footer a:link,
+#zone-footer a:visited{
+  color: #D4A705
+}
+
+html
+{
+    height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+
+.view-gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
+.view-gallery h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#page-title {
+  margin-bottom: 10px;
+}
+
+.view-header {
+  margin-bottom: 10px;
+}
+
+
+
+.node-news.view-mode-teaser {
+  border-bottom: 5px solid #AA0000;
+  margin-bottom: 20px;
 }

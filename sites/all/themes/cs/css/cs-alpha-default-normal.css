@@ -7,6 +7,7 @@
   height: 40px;
   margin-top: 60px;
   width: 100%;
+  padding: 0;
 }
 .navigation ul {
   display: table-row !important;
@@ -18,6 +19,18 @@
   width: 16.6%;
 }
 
+.navigation a {
+  border-radius: 10px 10px 0 0; 
+}
+
 #search-block-form .form-text {
   width: 221px;
+}
+
+body {
+  background-image: url("../images/background-normal.jpg");
+}
+
+.not-front #region-branding .site-name {
+  margin-left: -20px;
 }

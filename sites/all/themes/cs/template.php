@@ -26,6 +26,15 @@ function cs_preprocess_page(&$variables) {
   }
   
   $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => $breadcrumb));
+  drupal_add_html_head(
+    array(
+      '#tag' => 'link',
+      '#attributes' => array(
+         'href' => 'http://fonts.googleapis.com/css?family=Oswald',
+         'rel' => 'stylesheet',
+         'type' => 'text/css', 
+      )
+    ),'google-fonts-oswald');
 }
 
 function cs_preprocess_zone(&$variables) {
@@ -34,4 +43,37 @@ function cs_preprocess_zone(&$variables) {
   if ($variables['elements']['#zone'] == 'preface') {
     $variables['breadcrumb'] = $theme->page['breadcrumb'];
   }
+}
+
+function cs_preprocess_views_view_list(&$variables) {
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  
+  $classes = $view->style_plugin->options['row_class'];
+  
+  if (preg_match('/grid-([0-9]+)/', $classes, $match)) {
+    $grid_count = 12/$match[1];
+    
+    foreach(array_keys($rows) as $k) {
+      
+      $alpha = $k % $grid_count == 0;
+      $omega = ($k + 1) % $grid_count == 0;
+      
+      if ($alpha) {
+        $variables['classes'][$k][] = 'alpha';
+      }
+      
+      if ($omega) {
+        $variables['classes'][$k][] = 'omega';
+      }
+
+      $variables['classes_array'][$k] = implode(' ', $variables['classes'][$k]);
+    }
+  }
+  
+  
+  
+  // If a grid count is applied to each li
+  // Read it and apply alpha/omega classes where applicable.
+  
 }

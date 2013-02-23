@@ -5,6 +5,8 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = omega
 
+scripts[] = js/global.js
+
 ; REQUIRED CORE REGIONS
 
 regions[page_top] = Page Top

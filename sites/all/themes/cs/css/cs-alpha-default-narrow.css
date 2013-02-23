@@ -24,3 +24,40 @@ Those numbers above need to be maintained.
   border-radius: 0 11px 11px 0;  
   margin-right: 0;
 }
+
+.navigation {
+  /* Counter insufficient space in the grid */
+  padding-left: 30px;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin: 5px 10px;
+    text-align: center;
+    width: 130px;
+}
+
+.navigation a {
+  border-radius: 10px;
+}
+
+body {
+  background-image: url("../images/background-narrow.jpg");
+}
+
+#region-branding .site-name {
+  height: 110px;
+  margin-top: 0px;
+  margin-bottom: -10px; /* total = 100 */  
+  margin-left: 10px;
+}
+
+#region-branding a {
+  background-image: url("../images/logo-small.png");
+  display: block;
+  height: 110px;
+  position: absolute;
+  text-indent: -9999em;
+  width: 104px;
+  z-index: 1;
+}
