@@ -31,6 +31,10 @@ h3 {
   color: #AA0000;
 }
 
+.node h3 {
+  border-bottom: none;
+}
+
 #zone-content {
   background-color: #F7F7FF;
 }
@@ -163,7 +167,7 @@ body {
   .navigation ul li{
     width: auto;
   }
-  
+
   #region-menu {
     padding-right: 60px;
   }
@@ -184,7 +188,7 @@ body {
 }
 
 
-#zone-footer {  
+#zone-footer {
   background-color: #1F1E1D;
   color: #CCC;
   border-top: #AA0000 solid 10px;
