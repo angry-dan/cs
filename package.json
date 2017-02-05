@@ -1,0 +1,24 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "A new project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "frontend-serve",
+    "dist": "webpack -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "deeson-webpack-config-starter": "git+ssh://git@bitbucket.org/deesongroup6346/deeson-webpack-config-starter.git",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
+  }
+}

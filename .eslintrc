@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb/base",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-console": 0 
+  },
+  "globals": {
+    "Drupal": true,
+    "drupalSettings": true,
+    "drupalTranslations": true,
+    "domready": true,
+    "jQuery": true,
+    "_": true,
+    "matchMedia": true,
+    "Backbone": true,
+    "Modernizr": true,
+    "CKEDITOR": true
+  }
+}
