@@ -1,0 +1,52 @@
+@import "../../variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../mixins";
+
+.group-info {
+  @include make-container;
+
+
+  &__wapper {
+    @include make-row;
+  }
+
+  &__section {
+    @include make-md-column(3);
+
+    position: relative;
+    min-height: 120px;
+
+    @media (max-width: $screen-md-min) {
+      // Prevent margin collapse
+      overflow: auto;
+
+      & + & {
+        margin-top: 2em;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 5px;
+      right: 5px;
+      border-width: 1px;
+      border-style: solid;
+      border-image: linear-gradient(to bottom, $brand-primary 0, rgba(0, 0, 0, 0) 120px) 1;
+    }
+  }
+
+  &__times {
+    color: $brand-secondary;
+    font-size: 0.9em;
+  }
+
+  &__ages {
+    color: $brand-secondary;
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+  }
+
+}

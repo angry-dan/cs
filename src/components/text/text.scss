@@ -1,0 +1,14 @@
+@import "../../variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+.text {
+  @include container-fixed ($grid-gutter-width * 2);
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+
+  .text--muted {
+    color: $gray-light;
+  }
+}

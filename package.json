@@ -10,8 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-react": "^6.22.0",
     "bootstrap-sass": "^3.3.7",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "marked": "^0.3.6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "deeson-webpack-config-starter": "git+ssh://git@bitbucket.org/deesongroup6346/deeson-webpack-config-starter.git",

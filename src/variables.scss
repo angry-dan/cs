@@ -1,0 +1,32 @@
+$font-family-sans-serif:'Overpass', sans-serif;
+$font-family-serif: 'Arvo', serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: $font-family-serif;
+
+
+$brand-primary: #D4A705;
+$brand-secondary: #4A993A;
+$brand-black: #1F1E1D;
+
+$grid-float-breakpoint: 700px;
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+@mixin add-border {
+  position: relative;
+  min-height: 120px;
+  // Prevent margin collapse
+  overflow: auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    left: 5px;
+    right: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, $brand-primary 0, rgba(0, 0, 0, 0) 120px) 1;
+  }
+}

@@ -1,0 +1,155 @@
+@import "../../variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+.navigation {
+
+  & {
+    background: $brand-secondary;
+
+    min-height: 85px;
+    margin-bottom: 100px;
+    @include container-fixed;
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      min-height: 40px;
+      margin-bottom: 65px;
+    }
+  }
+
+  &__header {
+    @media (max-width: $grid-float-breakpoint-max) {
+      height: 40px;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    float: right;
+    margin-right: $navbar-padding-horizontal;
+    padding: 9px 10px;
+    background-color: transparent;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: none;
+    border-radius: 1px;
+
+    &:hover {
+      .icon-bar {
+        background-color: $brand-black;
+      }
+    }
+    .icon-bar {
+      background-color: $brand-primary;
+    }
+
+    // We remove the `outline` here, but later compensate by attaching `:hover`
+    // styles to `:focus`.
+    &:focus {
+      outline: 0;
+    }
+
+    // Bars
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+    }
+    .icon-bar + .icon-bar {
+      margin-top: 4px;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__brand {
+    background: url('./logo-large.png');
+    display: block;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    left: 50%;
+    margin-left: -75px;
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      margin: auto;
+      left: auto;
+      height: 90px;
+      width: 90px;
+    }
+  }
+
+  &__collapse {
+    @media (min-width: $grid-float-breakpoint) {
+      &.collapse {
+        display: block !important;
+        height: auto !important;
+      }
+    }
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    &__link-item {
+      @include make-xs-column(2);
+      text-align: center;
+      &--after-brand {
+        @include make-xs-column-offset(4)
+      }
+    }
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: $grid-float-breakpoint) {
+      list-style: none;
+      line-height: 85px;
+      @include make-row;
+    }
+  }
+
+  &__link-item {
+    list-style: none;
+    text-align: center;
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      @include make-xs-column(2);
+      text-align: center;
+      &--after-brand {
+        @include make-xs-column-offset(4)
+      }
+    }
+  }
+
+  &__link {
+    color: $body-bg;
+    font-family: $font-family-serif;
+    display: block;
+    font-size: 25px;
+    padding: 10px 0;
+
+    @media (min-width: $grid-float-breakpoint) {
+      font-size: 20px;
+      padding: 0;
+    }
+
+    &:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+
+    &--active, &--active:hover {
+      text-decoration: underline;
+      text-decoration-color: $brand-primary;
+    }
+  }
+}

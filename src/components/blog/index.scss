@@ -1,0 +1,190 @@
+@import "../../variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../mixins";
+
+@mixin blog-markup {
+  img {
+    max-width: 100%;
+  }
+}
+
+.blog {
+
+  @include make-container;
+
+  &__post {
+    @include make-row();
+  }
+
+  &__post-body {
+    @include make-md-column(6);
+    @include make-md-column-push(3);
+
+    @include make-sm-column(8);
+    @include make-sm-column-push(2);
+
+    @include add-border();
+    @include blog-markup();
+
+  }
+
+  &__post-photos {
+    // Puts the photos below the body.
+    clear: both;
+    // Gives the photos a containing box.
+    @include clearfix;
+    @include list-unstyled;
+  }
+
+  &__post-photo-item {
+    cursor: pointer;
+    padding-bottom: 5px;
+    @include make-xs-column(4, 5px);
+
+    @media (min-width: $screen-sm-min) {
+      @include make-sm-column(3);
+      padding: $grid-gutter-width / 2;
+    }
+
+  }
+
+  &__post-photo {
+    max-width: 100%;
+  }
+}
+
+.carousel {
+  & {
+    @include list-unstyled;
+    position: relative;
+  }
+
+  &__item {
+    .modal__content & {
+      height: 100vh;
+      @media (min-width: $screen-sm-min) {
+        height: 80vh;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__image {
+    margin: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // TODO: You can't rely on Slick to size based on the images because the images have their own ideas about sizing.
+  // instead, you need to wrap the images in a container which you can fix the size of.
+  // start by taking out the images and making a slick thats 100% of the window size
+  // then make the images fill the containers. Slick is only going to care about the slides and so will work fine
+  // and the images can be controlled with a bit of basic CSS. Perfect.
+
+  // Put the non-BEM slick stuff in here.
+  &.slick-slider {
+    .slick-arrow {
+      display: none;
+      @media (min-width: $screen-sm-min) {
+        display: inherit;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        font-size: 0;
+        height: 100%;
+        width: 120px;
+        border: none;
+        background: transparent;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.slick-prev {
+          left: 0;
+        }
+        &.slick-next {
+          right: 0;
+        }
+
+        &:before {
+          border-style: solid;
+          border-width: 7px 7px 0 0;
+          border-color: #aaa;
+          content: '';
+          display: inline-block;
+          height: 50px;
+          vertical-align: top;
+          width: 50px;
+        }
+
+        &.slick-prev:before {
+          left: 0.25em;
+          transform: rotate(-135deg);
+        }
+
+        &.slick-next:before {
+          left: 0;
+          transform: rotate(45deg);
+        }
+      }
+
+    }
+  }
+}
+
+.modal {
+  &{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255,255,255);
+    @media (min-width: $screen-sm-min) {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+  }
+  &__content{
+    max-height: 100%;
+    @media (min-width: $screen-sm-min) {
+      margin: 10px auto;
+      padding: 20px;
+      width: 80%;
+    }
+  }
+  &__close{
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+
+    color: #aaa;
+    text-shadow: 0 1px 0 #fff;
+
+    &:hover,
+    &:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+body.modal--is-open {
+  overflow: hidden;
+}
