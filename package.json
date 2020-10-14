@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "deeson-webpack-config-starter": "git+ssh://git@bitbucket.org/deesongroup6346/deeson-webpack-config-starter.git",
-    "eslint": "^3.13.1",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
